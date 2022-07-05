@@ -1,0 +1,40 @@
+<div class="card">
+  <div class="card-header">
+    <div class="row">
+      <div class="col-sm-1">
+        <!-- <button type="button" class="pdf" (click)="downloadPdf()" aria-label="Close">
+          <i class="fa fa-file-pdf" style="color: red"></i>
+        </button> -->
+      </div>
+      <div class="col-sm-1">
+        <!-- <button type="button" class="doc" (click)="downloadDoc()" aria-label="Close">
+          <i class="fa fa-file-word" aria-hidden="true"></i>
+        </button> -->
+      </div>
+      <div class="col-sm-1">
+        <!-- <button type="button" class="doc" (click)="downloadExcel()" aria-label="Close">
+          <i class="fa fa-file-excel" aria-hidden="true"></i>
+        </button> -->
+      </div>
+      <div class="col-sm-1">
+        <!-- <a class="btn btn-pill btn-warning" id="printBtn" (click)="printPdf()">
+          <i class="fa fa-print" aria-hidden="true"></i>
+        </a> -->
+      </div>
+      <div class="col-sm-1 offset-sm-7">
+        <button type="button" id="modalCloseBtn" class="close" (click)="hideModal()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="card-body">
+    <div *ngIf="pdf" class="pdf-container">
+      <ngx-extended-pdf-viewer [src]="pdf" delayFirstView="1000" [showPrintButton]="false" [showOpenFileButton]="false"
+        [filenameForDownload]="fileName" height="80vh" [useBrowserLocale]="true">
+      </ngx-extended-pdf-viewer>
+    </div>
+  </div>
+  <div class="card-footer"></div>
+</div>
+<ngx-spinner></ngx-spinner>
